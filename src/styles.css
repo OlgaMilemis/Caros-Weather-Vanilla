@@ -1,4 +1,58 @@
+body {
+  font-family: "Zen Kurenaido", sans-serif;
+}
+
 h1 {
-  color: red;
   font-size: 40px;
+  font-weight: 100;
+  line-height: 45px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: purple;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 100;
+}
+
+.currentWeather {
+  margin-bottom: 20px;
+}
+
+.wrapping {
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+.weatherApp {
+  padding: 40px;
+  background: #c2d6e9;
+  border: 1px solid;
+  border-radius: 10px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  color: #e771cd;
+}
+
+.weatherTemp img {
+  margin-right: 20px;
+  height: 80px;
+  width: 80px;
+}
+.weatherTemp strong {
+  color: purple;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+}
+.weatherTemp .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
 }
