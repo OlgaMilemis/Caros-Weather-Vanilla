@@ -46,41 +46,36 @@
           </form>
 
           <div class="CurrentWeather">
-            <h1 id="currentCity">Berlin</h1>
-            <ul>
-              <li id="date">Monday 21:54</li>
-              <li id="description">Cloudy</li>
-            </ul>
             <div class="row">
-              <div class="col-6">
+              <div class="col-7">
+                <h1 id="currentCity">Berlin</h1>
+                <ul>
+                  <li id="date">Monday 21:54</li>
+                  <li id="description">Cloudy</li>
+                  <li>Humidity: <span id="humidity"></span> %</li>
+                  <li>Wind:<span id="windSpeed"></span> km/h</li>
+                </ul>
+              </div>
+
+              <div class="col-5">
                 <div class="clearfix weatherTemp">
+                  <strong class="temperature" id="temperature">2</strong>
+                  <span class="units">
+                    <a href="#" id="Celsius-link">°C</a>|
+                    <a href="#" id="Farenheit-link">°F</a>
+                  </span>
                   <img
                     src="http://openweathermap.org/img/wn/04d@2x.png"
                     alt="cloudy"
                     id="icon"
                     class="float-left"
                   />
-                  <strong class="temperature" id="temperature">2</strong>
-                  <span class="units">
-                    <a href="#" id="Celsius-link">°C</a>|<a
-                      href="#"
-                      id="Farenheit-link"
-                      >°F</a
-                    >
-                  </span>
                 </div>
               </div>
             </div>
-
-            <div class="col-6">
-              <ul>
-                <li>Humidity: <span id="humidity"></span> %</li>
-                <li>Wind:<span id="windSpeed"></span> km/h</li>
-              </ul>
-            </div>
           </div>
 
-          <div class="NextdaysForecast row">
+          <div class="nextDaysForecast row">
             <div class="col">
               <div class="overview">
                 <div class="forecastDay">Sat</div>
