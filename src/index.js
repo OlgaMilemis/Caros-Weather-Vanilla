@@ -1,5 +1,28 @@
+let currentTime = new Date();
+function formatDate(date) {
+  let weekDays = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[weekDays];
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${day} ${hours}:${minutes}`;
+}
 function displayTemperature(response) {
-  console.log(response.data);
   let cityElement = document.querySelector("#currentCity");
   let temperatureElement = document.querySelector("#actualTemp");
   let minTempElement = document.querySelector("#minTemp");
@@ -7,7 +30,9 @@ function displayTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#windSpeed");
+  let dateDisplay = document.querySelector("#date");
   cityElement.innerHTML = response.data.name;
+  dateDisplay.innerHTML = formatDate(currentTime);
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   minTempElement.innerHTML = Math.round(response.data.main.temp_min);
   maxTempElement.innerHTML = Math.round(response.data.main.temp_max);
