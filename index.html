@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WeatherApp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,6 +18,7 @@
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
+    <title>WeatherApp</title>
   </head>
   <body>
     <div class="container">
@@ -28,12 +28,12 @@
             <div class="row">
               <div class="col-6">
                 <input
-                  id="city-input"
                   type="search"
                   placeholder="Type a city..."
                   autofocus="on"
                   autocomplete="off"
                   class="form-control shadow-sm"
+                  id="city-input"
                 />
               </div>
               <div class="col-3">
@@ -55,24 +55,19 @@
           </form>
 
           <div class="CurrentWeather" id="CurrentWeather">
-            <h1 id="currentCity">Moscow</h1>
-            <h2 id="date">Monday 21:54</h2>
+            <h1 id="currentCity"></h1>
+            <h2 id="date"></h2>
 
             <div class="row">
               <div class="col-6">
-                <span class="actualTemp" id="actualTemp">2</span>
+                <span class="actualTemp" id="actualTemp"></span>
                 <span class="units" id="units">
                   <a href="#" id="Celsius-link">°C</a>|
                   <a href="#" id="Farenheit-link">°F</a>
                 </span>
               </div>
               <div class="col-6">
-                <img
-                  src="http://openweathermap.org/img/wn/04d@2x.png"
-                  alt="cloudy"
-                  id="icon"
-                  class="float-left"
-                />
+                <img src="" alt="" id="icon" class="float-left" />
               </div>
             </div>
             <div class="row">

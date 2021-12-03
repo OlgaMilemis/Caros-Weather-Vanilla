@@ -23,7 +23,8 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayTemperature(response) {
+function showTemperature(response) {
+  console.log(response.data);
   let cityElement = document.querySelector("#currentCity");
   let dateDisplay = document.querySelector("#date");
   let temperatureElement = document.querySelector("#actualTemp");
@@ -48,22 +49,20 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-
-let apiKey = "5eac19cf21f53d5d30820a9a9bafd9f0";
-let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=${apiKey}&units=${units}`;
-
-axios.get(apiUrl).then(displayTemperature);
-
-function dayAndNight() {
-  let currentDay = new Date();
-  let dayNight = currentDay.getHours();
-  if (dayNight < 12) {
-    let bodyColor = document.querySelector("body");
-    bodyColor.style.background = "purple";
-  } else {
-    let bodyColor = document.querySelector("body");
-    bodyColor.style.background = "orange";
-  }
+function search(city) {
+  let apiKey = "5eac19cf21f53d5d30820a9a9bafd9f0";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
 }
-dayAndNight();
+
+function showCity(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("Moscow");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", showCity);
