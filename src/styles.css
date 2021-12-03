@@ -7,17 +7,6 @@ form {
   margin-bottom: 64px;
 }
 
-.btn {
-  color: white;
-  background-color: #d47ae8;
-  border-color: #d47ae8;
-}
-.btn:hover {
-  color: #d47ae8;
-  background-color: white;
-  border-color: #d47ae8;
-}
-
 h1 {
   font-size: 45px;
   line-height: 50px;
@@ -48,6 +37,16 @@ a {
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
   color: #e771cd;
 }
+.btn {
+  color: white;
+  background-color: #d47ae8;
+  border-color: #d47ae8;
+}
+.btn:hover {
+  color: #d47ae8;
+  background-color: white;
+  border-color: #d47ae8;
+}
 
 .CurrentWeather .actualTemp {
   padding-left: 20px;
@@ -77,6 +76,7 @@ a {
 }
 .CurrentWeather .description {
   font-size: 20px;
+  text-transform: capitalize;
 }
 
 .CurrentWeather:hover {
