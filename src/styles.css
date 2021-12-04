@@ -62,10 +62,10 @@ a {
   top: -34px;
 }
 
-.actualTemp .active {
+.CurrentWeather .active {
   cursor: default;
 }
-.actualTemp .active:hover {
+.CurrentWeather .active:hover {
   text-decoration: none;
 }
 
