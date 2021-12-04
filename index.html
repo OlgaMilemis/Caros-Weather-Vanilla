@@ -62,8 +62,8 @@
               <div class="col-6">
                 <span class="actualTemp" id="actualTemp"></span>
                 <span class="units" id="units">
-                  <a href="#" id="Celsius-link">°C</a>|
-                  <a href="#" id="Farenheit-link">°F</a>
+                  <a href="#" class="active" id="linkC">°C</a>|
+                  <a href="#" class="active" id="linkF">°F</a>
                 </span>
               </div>
               <div class="col-6">
@@ -74,11 +74,8 @@
               <div class="col-6">
                 <div class="conditions" id="conditions">
                   <div>
-                    Today's range: <span id="minTemp"> </span>-<span
-                      id="maxTemp"
-                    >
-                    </span
-                    >°C
+                    Today's range: <span class="minTemp" id="minTemp"> </span> /
+                    <span class="maxTemp" id="maxTemp"> </span>
                   </div>
                   <div>Humidity: <span id="humidity"> </span> %</div>
                   <div>Wind: <span id="windSpeed"> </span> km/h</div>
