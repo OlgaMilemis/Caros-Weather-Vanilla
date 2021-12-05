@@ -94,16 +94,13 @@ a {
 
 .nextDaysForecast {
   margin-top: 20px;
+  font-size: 20px;
   text-align: center;
 }
 .nextDaysForecast:hover {
   background: #fff;
   color: rgb(185, 29, 120);
   border: 1px solid rgb(185, 29, 120);
-}
-
-.forecastDay {
-  font-size: 20px;
 }
 
 .forecastTempMax {
