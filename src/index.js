@@ -93,12 +93,32 @@ function showCelsius(event) {
   fahrenheitLink.classList.remove("active");
 }
 
+function showPosition(position) {
+  let apiKey = "5eac19cf21f53d5d30820a9a9bafd9f0";
+  let units = "metric";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function getCurrentCoords(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let dateDisplay = document.querySelector("#date");
+dateDisplay.innerHTML = formatDate(currentTime);
+
 let celsiusTemp = null;
 let minCelsius = null;
 let maxCelsius = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", showCity);
+
+let buttonCurrentCoords = document.querySelector("#current-location-button");
+buttonCurrentCoords.addEventListener("click", getCurrentCoords);
 
 let fahrenheitLink = document.querySelector("#linkF");
 fahrenheitLink.addEventListener("click", showFahrenheit);
