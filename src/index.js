@@ -107,6 +107,27 @@ function getCurrentCoords(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#nextDaysForecast");
+  let nextDaysForecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    nextDaysForecastHTML =
+      nextDaysForecastHTML +
+      ` <div class="col-2">
+              <div class="forecastDay">${day}</div>
+              <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="42"/>
+              <div class="forecastTemp">
+                <span class="forecastTempMax">3° </span>
+                <span class="forecastTempMin">0° </span>
+              </div>
+         </div>`;
+  });
+
+  nextDaysForecastHTML = nextDaysForecastHTML + `</div>`;
+  forecastElement.innerHTML = nextDaysForecastHTML;
+}
+
 let dateDisplay = document.querySelector("#date");
 dateDisplay.innerHTML = formatDate(currentTime);
 
@@ -127,3 +148,4 @@ let celsiusLink = document.querySelector("#linkC");
 celsiusLink.addEventListener("click", showCelsius);
 
 search("Moscow");
+showForecast();
